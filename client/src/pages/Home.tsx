@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { StatusBar } from '@/components/StatusBar';
 import { BubblePressureGauge } from '@/components/BubblePressureGauge';
@@ -7,13 +8,14 @@ import { AlertLog } from '@/components/AlertLog';
 import { TrendChart } from '@/components/TrendChart';
 import { ActionAdvice } from '@/components/ActionAdvice';
 import { RadarScan } from '@/components/RadarScan';
+import { loadWebsiteData } from '@/lib/website-data';
 import { 
-  assetsData, 
-  sentimentIndicators, 
-  trendData, 
-  alertLogs,
-  calculateBubblePressure 
+  assetsData as defaultAssetsData, 
+  sentimentIndicators as defaultSentimentIndicators, 
+  trendData as defaultTrendData, 
+  alertLogs as defaultAlertLogs
 } from '@/lib/data';
+import type { Asset, SentimentIndicator, TrendData, AlertLog as AlertLogType } from '@/lib/data';
 
 /**
  * AI投机哨兵 - 战情室主页面
@@ -21,11 +23,37 @@ import {
  * 主色调：深海军蓝 + HUD蓝色高亮
  */
 export default function Home() {
-  // 计算当前泡沫压力值
-  const currentRHI = sentimentIndicators.find(i => i.shortName === 'RHI')?.value || 1.35;
-  const currentIBS = sentimentIndicators.find(i => i.shortName === 'IBS')?.value || 0.78;
-  const currentMSR = sentimentIndicators.find(i => i.shortName === 'MSR')?.value || 2.8;
-  const bubblePressure = calculateBubblePressure(currentRHI, currentIBS, currentMSR);
+  const [assetsData, setAssetsData] = useState<Asset[]>(defaultAssetsData);
+  const [sentimentIndicators, setSentimentIndicators] = useState<SentimentIndicator[]>(defaultSentimentIndicators);
+  const [trendData, setTrendData] = useState<TrendData[]>(defaultTrendData);
+  const [alertLogs, setAlertLogs] = useState<AlertLogType[]>(defaultAlertLogs);
+  const [bubblePressure, setBubblePressure] = useState(52);
+  const [isLoading, setIsLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<string>('');
+
+  // 加载网站数据
+  useEffect(() => {
+    loadWebsiteData().then(data => {
+      setSentimentIndicators(data.sentimentIndicators);
+      setAssetsData(data.assets);
+      setTrendData(data.trendData);
+      setAlertLogs(data.alerts);
+      setBubblePressure(data.bubblePressure);
+      setLastUpdated(data.lastUpdated);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-muted-foreground">加载监控数据中...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div 
@@ -124,6 +152,14 @@ export default function Home() {
             数据仅供参考，不构成投资建议
             {' · '}
             <span className="font-mono">v1.0.0</span>
+            {lastUpdated && (
+              <>
+                {' · '}
+                <span className="text-primary/70">
+                  最后更新: {new Date(lastUpdated).toLocaleString('zh-CN')}
+                </span>
+              </>
+            )}
           </p>
         </motion.footer>
       </div>

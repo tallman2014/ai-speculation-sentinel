@@ -1,0 +1,197 @@
+{
+  "lastUpdated": "2026-01-04T01:44:41.833048",
+  "sentimentIndicators": [
+    {
+      "name": "散户热度指数",
+      "shortName": "RHI",
+      "value": 1.27,
+      "threshold": {
+        "danger": 3.0,
+        "warning": 2.0,
+        "safe": 1.0
+      },
+      "description": "监控Reddit/X上关于二阶基建标的的讨论增量",
+      "interpretation": "当前RHI为1.27，处于温和区间"
+    },
+    {
+      "name": "机构看涨偏离度",
+      "shortName": "IBS",
+      "value": 0.74,
+      "threshold": {
+        "danger": 0.85,
+        "warning": 0.7,
+        "safe": 0.5
+      },
+      "description": "分析主流券商上调目标价的分析师比例",
+      "interpretation": "当前IBS为0.74，机构共识较强"
+    },
+    {
+      "name": "媒体词频比",
+      "shortName": "MSR",
+      "value": 3.26,
+      "threshold": {
+        "danger": 5.0,
+        "warning": 3.0,
+        "safe": 1.5
+      },
+      "description": "财经新闻中'狂欢词'与'末日词'的出现比例",
+      "interpretation": "当前MSR为3.26，媒体情绪乐观"
+    }
+  ],
+  "bubblePressure": 67,
+  "assets": [
+    {
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "category": "核能",
+      "price": 352.87,
+      "change": 1.82,
+      "changePercent": -0.61,
+      "rhi": 1.3,
+      "ibs": 0.91
+    },
+    {
+      "ticker": "VST",
+      "name": "Vistra Corp",
+      "category": "核能",
+      "price": 178.9,
+      "change": 1.09,
+      "changePercent": -0.24,
+      "rhi": 1.3,
+      "ibs": 0.78
+    },
+    {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "category": "铜矿",
+      "price": 41.94,
+      "change": 0.32,
+      "changePercent": 0.26,
+      "rhi": 0.9,
+      "ibs": 0.66
+    },
+    {
+      "ticker": "URA",
+      "name": "Global X Uranium ETF",
+      "category": "铀矿",
+      "price": 31.49,
+      "change": 0.21,
+      "changePercent": 0.46,
+      "rhi": 0.5,
+      "ibs": 0.65
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings",
+      "category": "电网",
+      "price": 140.98,
+      "change": 0.65,
+      "changePercent": -0.02,
+      "rhi": 1.6,
+      "ibs": 0.78
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp",
+      "category": "算力",
+      "price": 147.6,
+      "change": 0.57,
+      "changePercent": -0.15,
+      "rhi": 3.1,
+      "ibs": 0.95
+    }
+  ],
+  "alerts": [
+    {
+      "id": "1",
+      "timestamp": "01:44",
+      "level": "info",
+      "ticker": "VRT",
+      "message": "VRT 成交量较20日均值放大1.3倍"
+    },
+    {
+      "id": "2",
+      "timestamp": "01:24",
+      "level": "warning",
+      "ticker": "NVDA",
+      "message": "NVDA RHI指数接近12.7，散户热度升温"
+    },
+    {
+      "id": "3",
+      "timestamp": "00:59",
+      "level": "info",
+      "message": "MAG7财报周即将到来，建议提升风险管理权重"
+    },
+    {
+      "id": "4",
+      "timestamp": "00:44",
+      "level": "info",
+      "ticker": "CEG",
+      "message": "CEG 分析师目标价中位数上调至$407"
+    },
+    {
+      "id": "5",
+      "timestamp": "00:29",
+      "level": "warning",
+      "message": "IBS综合指数达到0.74，机构共识趋于一致"
+    },
+    {
+      "id": "6",
+      "timestamp": "23:59",
+      "level": "info",
+      "ticker": "FCX",
+      "message": "LME铜库存继续下降，FCX基本面改善"
+    }
+  ],
+  "trendData": [
+    {
+      "date": "12/29",
+      "rhi": 1.02,
+      "ibs": 0.73,
+      "msr": 2.39,
+      "bubblePressure": 43
+    },
+    {
+      "date": "12/30",
+      "rhi": 1.04,
+      "ibs": 0.73,
+      "msr": 2.37,
+      "bubblePressure": 42
+    },
+    {
+      "date": "12/31",
+      "rhi": 1.16,
+      "ibs": 0.71,
+      "msr": 2.19,
+      "bubblePressure": 42
+    },
+    {
+      "date": "01/01",
+      "rhi": 1.18,
+      "ibs": 0.79,
+      "msr": 2.43,
+      "bubblePressure": 45
+    },
+    {
+      "date": "01/02",
+      "rhi": 1.25,
+      "ibs": 0.78,
+      "msr": 2.52,
+      "bubblePressure": 48
+    },
+    {
+      "date": "01/03",
+      "rhi": 1.27,
+      "ibs": 0.79,
+      "msr": 2.42,
+      "bubblePressure": 48
+    },
+    {
+      "date": "01/04",
+      "rhi": 1.25,
+      "ibs": 0.77,
+      "msr": 2.56,
+      "bubblePressure": 50
+    }
+  ]
+}
