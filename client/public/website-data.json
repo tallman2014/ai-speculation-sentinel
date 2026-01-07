@@ -1,197 +1,36 @@
 {
-  "lastUpdated": "2026-01-04T01:45:12.397254",
-  "sentimentIndicators": [
-    {
-      "name": "散户热度指数",
-      "shortName": "RHI",
-      "value": 1.6,
-      "threshold": {
-        "danger": 3.0,
-        "warning": 2.0,
-        "safe": 1.0
-      },
-      "description": "监控Reddit/X上关于二阶基建标的的讨论增量",
-      "interpretation": "当前RHI为1.6，处于温和区间"
+    "timestamp": "2026-01-04 21:05:54",
+    "metrics": {
+        "RHI": 0.65,
+        "IBS": 0.44,
+        "MSR": 0.86
     },
-    {
-      "name": "机构看涨偏离度",
-      "shortName": "IBS",
-      "value": 0.76,
-      "threshold": {
-        "danger": 0.85,
-        "warning": 0.7,
-        "safe": 0.5
-      },
-      "description": "分析主流券商上调目标价的分析师比例",
-      "interpretation": "当前IBS为0.76，机构共识较强"
-    },
-    {
-      "name": "媒体词频比",
-      "shortName": "MSR",
-      "value": 2.67,
-      "threshold": {
-        "danger": 5.0,
-        "warning": 3.0,
-        "safe": 1.5
-      },
-      "description": "财经新闻中'狂欢词'与'末日词'的出现比例",
-      "interpretation": "当前MSR为2.67，媒体情绪理性"
-    }
-  ],
-  "bubblePressure": 67,
-  "assets": [
-    {
-      "ticker": "CEG",
-      "name": "Constellation Energy",
-      "category": "核能",
-      "price": 350.09,
-      "change": -2.65,
-      "changePercent": 0.46,
-      "rhi": 1.2,
-      "ibs": 0.85
-    },
-    {
-      "ticker": "VST",
-      "name": "Vistra Corp",
-      "category": "核能",
-      "price": 175.6,
-      "change": 0.53,
-      "changePercent": 0.24,
-      "rhi": 1.5,
-      "ibs": 0.78
-    },
-    {
-      "ticker": "FCX",
-      "name": "Freeport-McMoRan",
-      "category": "铜矿",
-      "price": 41.4,
-      "change": -0.03,
-      "changePercent": 0.57,
-      "rhi": 0.8,
-      "ibs": 0.6
-    },
-    {
-      "ticker": "URA",
-      "name": "Global X Uranium ETF",
-      "category": "铀矿",
-      "price": 30.51,
-      "change": -0.31,
-      "changePercent": 0.04,
-      "rhi": 0.7,
-      "ibs": 0.72
-    },
-    {
-      "ticker": "VRT",
-      "name": "Vertiv Holdings",
-      "category": "电网",
-      "price": 143.49,
-      "change": 0.36,
-      "changePercent": -0.05,
-      "rhi": 1.7,
-      "ibs": 0.82
-    },
-    {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corp",
-      "category": "算力",
-      "price": 145.66,
-      "change": -0.33,
-      "changePercent": 0.7,
-      "rhi": 2.9,
-      "ibs": 0.89
-    }
-  ],
-  "alerts": [
-    {
-      "id": "1",
-      "timestamp": "01:45",
-      "level": "info",
-      "ticker": "VRT",
-      "message": "VRT 成交量较20日均值放大1.3倍"
-    },
-    {
-      "id": "2",
-      "timestamp": "01:25",
-      "level": "warning",
-      "ticker": "NVDA",
-      "message": "NVDA RHI指数接近16.0，散户热度升温"
-    },
-    {
-      "id": "3",
-      "timestamp": "01:00",
-      "level": "info",
-      "message": "MAG7财报周即将到来，建议提升风险管理权重"
-    },
-    {
-      "id": "4",
-      "timestamp": "00:45",
-      "level": "info",
-      "ticker": "CEG",
-      "message": "CEG 分析师目标价中位数上调至$407"
-    },
-    {
-      "id": "5",
-      "timestamp": "00:30",
-      "level": "warning",
-      "message": "IBS综合指数达到0.76，机构共识趋于一致"
-    },
-    {
-      "id": "6",
-      "timestamp": "00:00",
-      "level": "info",
-      "ticker": "FCX",
-      "message": "LME铜库存继续下降，FCX基本面改善"
-    }
-  ],
-  "trendData": [
-    {
-      "date": "12/29",
-      "rhi": 1.15,
-      "ibs": 0.68,
-      "msr": 2.01,
-      "bubblePressure": 40
-    },
-    {
-      "date": "12/30",
-      "rhi": 1.1,
-      "ibs": 0.78,
-      "msr": 2.27,
-      "bubblePressure": 42
-    },
-    {
-      "date": "12/31",
-      "rhi": 1.07,
-      "ibs": 0.74,
-      "msr": 2.18,
-      "bubblePressure": 46
-    },
-    {
-      "date": "01/01",
-      "rhi": 1.12,
-      "ibs": 0.76,
-      "msr": 2.64,
-      "bubblePressure": 44
-    },
-    {
-      "date": "01/02",
-      "rhi": 1.13,
-      "ibs": 0.76,
-      "msr": 2.68,
-      "bubblePressure": 47
-    },
-    {
-      "date": "01/03",
-      "rhi": 1.25,
-      "ibs": 0.79,
-      "msr": 2.42,
-      "bubblePressure": 49
-    },
-    {
-      "date": "01/04",
-      "rhi": 1.21,
-      "ibs": 0.77,
-      "msr": 2.66,
-      "bubblePressure": 51
-    }
-  ]
+    "bubble_pressure": 93.1,
+    "target_data": [
+        {
+            "name": "AI_Stock_A",
+            "price": 186.57,
+            "change_24h": 6.89,
+            "sentiment": "Bullish"
+        },
+        {
+            "name": "AI_Stock_B",
+            "price": 144.86,
+            "change_24h": 0.34,
+            "sentiment": "Neutral"
+        },
+        {
+            "name": "AI_Index_C",
+            "price": 2542.28,
+            "change_24h": 15.75,
+            "sentiment": "Bearish"
+        }
+    ],
+    "warning_logs": [
+        {
+            "time": "21:05:54",
+            "level": "CRITICAL",
+            "message": "泡沫压力值 (93.1) 处于高风险区域，建议谨慎。"
+        }
+    ]
 }
