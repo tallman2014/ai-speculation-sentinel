@@ -1,36 +1,196 @@
 {
-    "timestamp": "2026-01-04 21:05:54",
-    "metrics": {
-        "RHI": 0.65,
-        "IBS": 0.44,
-        "MSR": 0.86
+  "lastUpdated": "2026-01-06T21:08:34.300426",
+  "sentimentIndicators": [
+    {
+      "name": "散户热度指数",
+      "shortName": "RHI",
+      "value": 3.2,
+      "threshold": {
+        "danger": 3.0,
+        "warning": 2.0,
+        "safe": 1.0
+      },
+      "description": "监控Reddit/X上关于二阶基建标的的讨论增量",
+      "interpretation": "当前RHI为3.2，处于【极度过热】区间，散户已大规模入场"
     },
-    "bubble_pressure": 93.1,
-    "target_data": [
-        {
-            "name": "AI_Stock_A",
-            "price": 186.57,
-            "change_24h": 6.89,
-            "sentiment": "Bullish"
-        },
-        {
-            "name": "AI_Stock_B",
-            "price": 144.86,
-            "change_24h": 0.34,
-            "sentiment": "Neutral"
-        },
-        {
-            "name": "AI_Index_C",
-            "price": 2542.28,
-            "change_24h": 15.75,
-            "sentiment": "Bearish"
-        }
-    ],
-    "warning_logs": [
-        {
-            "time": "21:05:54",
-            "level": "CRITICAL",
-            "message": "泡沫压力值 (93.1) 处于高风险区域，建议谨慎。"
-        }
-    ]
+    {
+      "name": "机构看涨偏离度",
+      "shortName": "IBS",
+      "value": 0.92,
+      "threshold": {
+        "danger": 0.85,
+        "warning": 0.70,
+        "safe": 0.50
+      },
+      "description": "分析主流券商上调目标价的分析师比例",
+      "interpretation": "当前IBS为0.92，【极端一致】，92%分析师看涨，市场已进入'无视风险'阶段"
+    },
+    {
+      "name": "媒体词频比",
+      "shortName": "MSR",
+      "value": 5.8,
+      "threshold": {
+        "danger": 5.0,
+        "warning": 3.0,
+        "safe": 1.5
+      },
+      "description": "财经新闻中'狂欢词'与'末日词'的出现比例",
+      "interpretation": "当前MSR为5.8，【极度狂热】，全网充斥'AI革命'、'核能复兴'等狂欢词汇"
+    }
+  ],
+  "bubblePressure": 100,
+  "assets": [
+    {
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "category": "核能",
+      "price": 385.92,
+      "change": 32.65,
+      "changePercent": 9.26,
+      "rhi": 3.1,
+      "ibs": 0.95
+    },
+    {
+      "ticker": "VST",
+      "name": "Vistra Corp",
+      "category": "核能",
+      "price": 198.45,
+      "change": 22.85,
+      "changePercent": 12.98,
+      "rhi": 3.2,
+      "ibs": 0.92
+    },
+    {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "category": "铜矿",
+      "price": 52.18,
+      "change": 10.78,
+      "changePercent": 26.01,
+      "rhi": 2.8,
+      "ibs": 0.88
+    },
+    {
+      "ticker": "URA",
+      "name": "Global X Uranium ETF",
+      "category": "铀矿",
+      "price": 48.92,
+      "change": 18.41,
+      "changePercent": 60.21,
+      "rhi": 3.5,
+      "ibs": 0.91
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings",
+      "category": "电网",
+      "price": 178.34,
+      "change": 34.85,
+      "changePercent": 24.36,
+      "rhi": 3.3,
+      "ibs": 0.93
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp",
+      "category": "算力",
+      "price": 198.76,
+      "change": 53.10,
+      "changePercent": 36.43,
+      "rhi": 4.2,
+      "ibs": 0.96
+    }
+  ],
+  "alerts": [
+    {
+      "id": "1",
+      "timestamp": "01:45",
+      "level": "danger",
+      "ticker": "NVDA",
+      "message": "🚨 NVDA RHI指数飙升至4.2，散户疯狂入场，泡沫风险极高"
+    },
+    {
+      "id": "2",
+      "timestamp": "01:25",
+      "level": "danger",
+      "ticker": "URA",
+      "message": "🚨 URA涨幅60%+，机构一致性达0.91，市场情绪极度狂热"
+    },
+    {
+      "id": "3",
+      "timestamp": "01:15",
+      "level": "warning",
+      "message": "⚠️ 媒体词频比达5.8，全网充斥'AI革命'、'核能复兴'等狂欢词汇"
+    },
+    {
+      "id": "4",
+      "timestamp": "01:05",
+      "level": "danger",
+      "ticker": "CEG",
+      "message": "🚨 CEG涨幅9.26%，分析师目标价纷纷上调至$450+，泡沫迹象明显"
+    },
+    {
+      "id": "5",
+      "timestamp": "00:55",
+      "level": "danger",
+      "message": "🚨 IBS综合指数达0.92，92%分析师看涨，市场已进入'无视风险'阶段"
+    },
+    {
+      "id": "6",
+      "timestamp": "00:45",
+      "level": "danger",
+      "message": "🚨 泡沫压力值突破100，进入极度危险区间，建议立即启动风险管理"
+    }
+  ],
+  "trendData": [
+    {
+      "date": "12/29",
+      "rhi": 1.1,
+      "ibs": 0.72,
+      "msr": 2.2,
+      "bubblePressure": 42
+    },
+    {
+      "date": "12/30",
+      "rhi": 1.5,
+      "ibs": 0.75,
+      "msr": 2.8,
+      "bubblePressure": 48
+    },
+    {
+      "date": "12/31",
+      "rhi": 1.8,
+      "ibs": 0.78,
+      "msr": 3.2,
+      "bubblePressure": 54
+    },
+    {
+      "date": "01/01",
+      "rhi": 2.1,
+      "ibs": 0.82,
+      "msr": 3.8,
+      "bubblePressure": 62
+    },
+    {
+      "date": "01/02",
+      "rhi": 2.5,
+      "ibs": 0.85,
+      "msr": 4.5,
+      "bubblePressure": 72
+    },
+    {
+      "date": "01/03",
+      "rhi": 2.9,
+      "ibs": 0.89,
+      "msr": 5.2,
+      "bubblePressure": 83
+    },
+    {
+      "date": "01/06",
+      "rhi": 3.2,
+      "ibs": 0.92,
+      "msr": 5.8,
+      "bubblePressure": 100
+    }
+  ]
 }
