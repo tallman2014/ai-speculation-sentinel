@@ -1,11 +1,11 @@
 {
-    "timestamp": "2026-01-09 02:06:10",
+    "timestamp": "2026-01-09 02:08:24",
     "metrics": {
-        "RHI": 0.62,
-        "IBS": 0.79,
-        "MSR": 0.54
+        "RHI": 0.67,
+        "IBS": 0.76,
+        "MSR": 0.59
     },
-    "bubble_pressure": 80.6,
+    "bubble_pressure": 83.8,
     "target_data": [
         {
             "name": "NVIDIA",
@@ -28,27 +28,27 @@
     ],
     "warning_logs": [
         {
-            "time": "02:06:10",
+            "time": "02:08:24",
             "level": "CRITICAL",
-            "message": "泡沫压力值 (80.6) 处于高风险区域，建议谨慎。"
+            "message": "泡沫压力值 (83.8) 处于高风险区域，建议谨慎。"
         },
         {
-            "time": "02:06:10",
+            "time": "02:08:24",
             "level": "WARN",
             "message": "异动信号：NVIDIA交易量激增，可能存在异动信号。"
         },
         {
-            "time": "02:06:10",
+            "time": "02:08:24",
             "level": "WARN",
             "message": "异动信号：数据中心能源需求快速增长，可能导致能源供应紧张。"
         },
         {
-            "time": "02:06:10",
+            "time": "02:08:24",
             "level": "WARN",
             "message": "异动信号：稀土供应受地缘政治影响，存在潜在供应风险。"
         },
         {
-            "time": "02:06:10",
+            "time": "02:08:24",
             "level": "CRITICAL",
             "message": "行动建议 (CRITICAL): 密切关注市场估值，警惕潜在泡沫破裂风险，建议逐步减仓高估值AI概念股。"
         }
