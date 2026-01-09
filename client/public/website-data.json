@@ -1,5 +1,5 @@
 {
-    "lastUpdated": "2026-01-09 02:09:06",
+    "lastUpdated": "2026-01-09 02:11:37",
     "sentimentIndicators": [
         {
             "name": "散户热度指数",
@@ -74,19 +74,19 @@
     "alerts": [
         {
             "id": "0",
-            "timestamp": "02:09",
+            "timestamp": "02:11",
             "level": "warning",
             "message": "NVIDIA交易量激增，可能存在异动信号。"
         },
         {
             "id": "1",
-            "timestamp": "02:09",
+            "timestamp": "02:11",
             "level": "warning",
             "message": "数据中心能源需求快速增长，可能导致能源供应紧张。"
         },
         {
             "id": "2",
-            "timestamp": "02:09",
+            "timestamp": "02:11",
             "level": "warning",
             "message": "稀土供应受地缘政治影响，存在潜在供应风险。"
         }
